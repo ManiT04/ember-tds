@@ -2,8 +2,12 @@
 <div class="card">
   <div class="card-header bg-primary text-light">Ex1 : Note application </div>
   <div class="card-body">
-    <Textarea class="form-control mb-3" @value={{this.content}}/>
-    <div class="alert alert-info">Il reste {{this.size}} caractères disponibles.</div>
+    <Textarea class="form-control mb-3" @value={{this.content}}
+    @input={{this.update}}/>
+    <button type="button" class="btn btn-primary" {{on 'click' this.save }}>Enregistrer </button>
+    <button type="button" class="btn btn-primary">Effacer </button> <br><br>
+    <div class="alert alert-info">Il reste {{this.size}} caractères disponibles.</div> <br>
+    <div class="alert alert-info">{{this.save}}</div>
 
   </div>
 </div>
