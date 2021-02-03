@@ -8,7 +8,7 @@ export default class Ex1Controller extends Controller {
   MAX = 100;
 
   get style() {
-    return this.info = info;
+    return this.info;
   }
 
   get size() {
