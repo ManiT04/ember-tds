@@ -22,12 +22,6 @@ export default class Ex1Controller extends Controller {
   }
 
   @action
-  save(content) {
-    //this.info = 'Note sauvegardée';
-    this.info = content;
-  }
-
-  @action
   update() {
     this.info = 'Note modifiée';
   }

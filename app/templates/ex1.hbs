@@ -2,7 +2,7 @@
 <div class="card" id="note">
   <div class="card-header bg-primary text-light">Ex1 : Note application </div>
   <div class="card-body">
-    <Textarea class="form-control mb-3" @value={{this.content}}
+    <Textarea maxlength='100' class="form-control mb-3" @value={{this.content}}
     @input={{this.update}}/>
 
     <div class="alert alert-info">Il reste {{this.size}} caractères disponibles.</div> <br>
