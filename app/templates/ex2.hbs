@@ -1,10 +1,11 @@
 {{page-title "Ex2"}}
 <ul class="list-group">
   {{#each @model.services as |service|}}
-    <li class="list-groupe_item {{if service.active 'active' ''}}"
+    <li class="list-group_item {{if service.active 'active' ''}}"
       {{action "toggleActive" service}}>{{service.name}} {{service.price}}</li>
   {{/each}}
 </ul>
+<br>
 {{ plural @model.countActive
   'Aucun service sélectionné'
   'service sélectionné' 'service sélectionnés'}}<br>

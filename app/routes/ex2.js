@@ -9,7 +9,6 @@ export default class Ex2Route extends Route {
   }
 
   @action toggleActive(serv) {
-    debugger;
     //serv.active = !serv.active; // pour faire un not
     set(serv, 'active',!serv.active);
   }
