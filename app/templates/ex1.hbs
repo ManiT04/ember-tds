@@ -4,15 +4,15 @@
   <div class="card-body">
     <Textarea class="form-control mb-3" @value={{this.content}}
     @input={{this.update}}/>
-    <button type="button" class="btn btn-primary" {{on 'click' this.save }}>Enregistrer </button>
-    <button type="button" class="btn btn-primary" {{on 'click' this.clear }}>Effacer </button> <br><br>
-
-    <!--<button data-ng_click="note.save()" class="btn btn-primary">Enregistrer</button>
-    <button data-ng-click="note.clear()" class="btn btn-primary">Effacer</button>-->
 
     <div class="alert alert-info">Il reste {{this.size}} caractères disponibles.</div> <br>
-    <div class="alert alert-info">{{this.save}}</div>
 
   </div>
 </div>
+
+<div>
+  <button type="button" class="btn btn-primary" {{ action "save" this.content @model }}>Enregistrer </button>
+  <button type="button" class="btn btn-primary" {{ action "clear" }}>Effacer </button> <br><br>
+</div>
+
 {{outlet}}

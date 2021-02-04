@@ -8,7 +8,13 @@ export default class Ex1Controller extends Controller {
   MAX = 100;
 
   get style() {
-    return this.info;
+    if (this.size < 20) {
+      return 'danger';
+    }
+    if (this.size < 20) {
+      return 'warning';
+    }
+    return 'info';
   }
 
   get size() {
@@ -16,17 +22,19 @@ export default class Ex1Controller extends Controller {
   }
 
   @action
-  save() {
-    console.log('Note sauvegardée');
+  save(content) {
+    //this.info = 'Note sauvegardée';
+    this.info = content;
   }
 
   @action
   update() {
-    console.log('Note modifiée');
+    this.info = 'Note modifiée';
   }
 
   @action
   clear() {
-    console.log('effacer');
+    this.content = '';
+    this.info = '';
   }
 }
