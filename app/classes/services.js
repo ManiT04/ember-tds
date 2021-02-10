@@ -1,4 +1,5 @@
 import { computed } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class Services {
 
@@ -22,9 +23,11 @@ export default class Services {
     return r;
   }
 
+
+  @tracked promo;
+
   get codePromo(){
-    //code = this.promos;
-    code = "B22";
+    code = this.promo;
     switch (code){
       case "B22":
         return this.sumActive*0.05;
@@ -34,7 +37,6 @@ export default class Services {
         return this.sumActive*0.02;
     }
   }
-
 
 }
 
