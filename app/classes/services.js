@@ -24,7 +24,7 @@ export default class Services {
   }
 
 
-  @tracked promo;
+  @tracked promo='';
 
   get codePromo(){
     code = this.promo;
