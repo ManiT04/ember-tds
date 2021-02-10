@@ -3,8 +3,10 @@ import { computed } from '@ember/object';
 export default class Services {
 
   services=[];
-  constructor(services) {
+  promos=[];
+  constructor(services, promos) {
     this.services=services;
+    this.promos=promos;
   }
 
   @computed('services.@each.active')
@@ -12,14 +14,6 @@ export default class Services {
     return this.services.filterBy('active',true).length;
   }
   get sumActive(){
-    /*let sum = 0;
-    this.services.forEach(s=>{
-      if(s.active){
-        sum+=s.price;
-      }
-    });
-    return sum;*/
-
     let services=this.services.filterBy('active', true);
     let r=0;
     services.forEach(s=>{
@@ -28,6 +22,18 @@ export default class Services {
     return r;
   }
 
+  get codePromo(){
+    //code = this.promos;
+    code = "B22";
+    switch (code){
+      case "B22":
+        return this.sumActive*0.05;
+      case "AZ":
+        return this.sumActive*0.01;
+      case "UBOAT":
+        return this.sumActive*0.02;
+    }
+  }
 
 
 }

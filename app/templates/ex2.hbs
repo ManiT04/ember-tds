@@ -17,15 +17,24 @@
 <hr>
 <div class="total"> <!--somme total-->
   Total: <span>{{ @model.sumActive }}</span>
-</div>
+</div> <br>
 
 <div> <!--checkbox et input de code promo-->
   <div class="input-group">
       <span class="input-group-addon">
         <input type="checkbox" aria-label="...">
       </span>
-    <input type="text" class="form-control" aria-label="..." >
+    <input type="text" class="form-control" aria-label="..." id="promo">
   </div>
-</div>
+</div> <br>
+
+
+<div class="total">
+  <!--Remise :<span>{{ @model.codePromo }}</span><br>-->
+  Total avec remise :<span></span><br>
+</div><br>
+
+
+
 
 {{outlet}}
