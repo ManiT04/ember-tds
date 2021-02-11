@@ -25,4 +25,9 @@ let promos = {
   AZ: 0.01,
   UBOAT: 0.02,
 };
+/*Pour un objet ces deux écritures sont possibles :
+* promos.B22;
+* promos['B22'];
+* promos[codePromo];
+* mais promos.codePromo impossible; !!! */
 export { datas, promos };

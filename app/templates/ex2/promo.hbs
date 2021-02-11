@@ -1,0 +1,19 @@
+{{page-title "Promo"}}
+
+<div> <!--checkbox et input de code promo-->
+  <div class="input-group">
+      <!--<span class="input-group-addon">
+        <input type="checkbox">
+      </span>-->
+    <Input class="form-control" @value={{@model.codePromo}}/>
+  </div>
+</div><br>
+
+
+<div class="total">
+  Remise : <span>{{format-currency @model.montantPromo }}</span><br>
+  Total avec remise : <span>{{format-currency @model.montantApRemise }}</span><br>
+</div><br>
+
+
+{{outlet}}

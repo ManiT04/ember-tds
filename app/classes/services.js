@@ -4,7 +4,7 @@ import { tracked } from '@glimmer/tracking';
 export default class Services {
 
   services=[];
-  promos=[];
+  promos= {}; //promo est un objet dans data
   constructor(services, promos) {
     this.services=services;
     this.promos=promos;
@@ -14,6 +14,7 @@ export default class Services {
   get countActive() { //property monService.countActive()
     return this.services.filterBy('active',true).length;
   }
+
   get sumActive(){
     let services=this.services.filterBy('active', true);
     let r=0;
@@ -24,19 +25,19 @@ export default class Services {
   }
 
 
-  @tracked promo='';
+  @tracked codePromo;
 
-  get codePromo(){
-    code = this.promo;
-    switch (code){
-      case "B22":
-        return this.sumActive*0.05;
-      case "AZ":
-        return this.sumActive*0.01;
-      case "UBOAT":
-        return this.sumActive*0.02;
-    }
+  get promoTx(){
+    return this.promos[this.codePromo] || 'Code invalide';
+    //permet de récup le code et d'aller chercher le taux dans l'objet grâce aux [] qui agit comme pr un tableau
   }
 
+  get montantPromo(){
+    return this.sumActive * this.promoTx;
+  }
+
+  get montantApRemise(){
+    return this.sumActive - this.montantPromo;
+  }
 }
 

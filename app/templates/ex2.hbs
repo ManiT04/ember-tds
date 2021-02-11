@@ -10,29 +10,16 @@
 <ul class="list-group"> <!--liste des éléments-->
   {{#each @model.services as |service|}}
     <li class="list-group-item {{if service.active 'active' ''}}"
-      {{action "toggleActive" service}}>{{service.name}} {{service.price}}</li>
+      {{action "toggleActive" service}}>{{service.name}} {{format-currency service.price }}</li>
   {{/each}}
 </ul>
 
 <hr>
 <div class="total"> <!--somme total-->
-  Total: <span>{{ @model.sumActive }}</span>
-</div> <br>
+  Total: <span>{{format-currency @model.sumActive }}</span>
+</div><br><br>
 
-<div> <!--checkbox et input de code promo-->
-  <div class="input-group">
-      <span class="input-group-addon">
-        <input type="checkbox" aria-label="...">
-      </span>
-    <input type="text" class="form-control" aria-label="..." @value={{ this.promo }}>
-  </div>
-</div><br>
-
-
-<div class="total">
-  Remise :<span>{{ @model.codePromo }}</span><br>
-  Total avec remise :<span></span><br>
-</div><br>
+<button class="btn btn-primary" {{action "togglePromo"}}>Code promo</button><br><br>
 
 
 {{outlet}}
