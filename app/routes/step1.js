@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import { set } from '@ember/object';
 
 export default class Step1Route extends Route {
   model() {
@@ -49,6 +50,6 @@ export default class Step1Route extends Route {
   }
 
   setupController(controller, model) { // sert à intercepter l'initialisation du controller
-    controller.disposItems = model;
+    controller.dispoItems = model;
   }
 }
