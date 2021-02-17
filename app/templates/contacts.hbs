@@ -1,0 +1,18 @@
+{{page-title "Contacts"}}
+<table>
+  <thead>
+  <tr>
+    <td>Nom</td>
+  </tr>
+  </thead>
+
+  <tbody>
+  {{#each @model.contacts as |contact|}}
+    <tr>
+      <td>{{contact.nom}}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+{{outlet}}
