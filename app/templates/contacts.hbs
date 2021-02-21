@@ -7,12 +7,34 @@
   </thead>
 
   <tbody>
-  {{#each @model.contacts as |contact|}}
-    <tr>
-      <td>{{contact.nom}}</td>
-    </tr>
-  {{/each}}
+    {{#each @model.contacts as |contact|}}
+      <tr>
+        <td>{{contact.nom}}</td>
+        <td>{{contact.prenom}}</td>
+        <td>{{contact.email}}</td>
+        <td>
+          <LinkTo @route="contacts.update" @model={{contact.id}}>
+            <i class="far fa-edit"></i>
+          </LinkTo>
+          <button {{action "delete" contact}} class="btn btn-primary btn-sm">
+            <i class="far fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    {{/each}}
   </tbody>
+
+  <tfoot>
+  <tr>
+    <td>
+      <LinkTo @route="contacts.add">Ajouter</LinkTo>
+      {{#if @model.deletedsCount}}
+        <button class="btn btn-danger" {{action "cancelDeletion" @model.deleteds }}>Annuler la suppression ({{@model.deletedsCount}})</button>
+      {{/if}}
+    </td>
+  </tr>
+  </tfoot>
+
 </table>
 
 {{outlet}}
