@@ -6,6 +6,6 @@ export default class CategoriesRoute extends Route {
   }
 
   afterModel(model){
-
+    return ;
   }
 }
