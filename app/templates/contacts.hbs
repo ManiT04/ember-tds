@@ -1,9 +1,10 @@
 {{page-title "Contacts"}}
+
 <table>
   <thead>
-  <tr>
-    <td>Nom</td>
-  </tr>
+    <tr>
+      <td>Nom</td>
+    </tr>
   </thead>
 
   <tbody>
@@ -25,14 +26,14 @@
   </tbody>
 
   <tfoot>
-  <tr>
-    <td>
-      <LinkTo @route="contacts.add">Ajouter</LinkTo>
-      {{#if @model.deletedsCount}}
-        <button class="btn btn-danger" {{action "cancelDeletion" @model.deleteds }}>Annuler la suppression ({{@model.deletedsCount}})</button>
-      {{/if}}
-    </td>
-  </tr>
+    <tr>
+      <td>
+        <LinkTo @route="contacts.add">Ajouter</LinkTo>
+        {{#if @model.deletedsCount}}
+          <button class="btn btn-danger" {{action "cancelDeletion" @model.deleteds }}>Annuler la suppression ({{@model.deletedsCount}})</button>
+        {{/if}}
+      </td>
+    </tr>
   </tfoot>
 
 </table>
