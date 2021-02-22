@@ -2,16 +2,19 @@
 
 <BsTab as |tab|>
 
-  <tab.pane @title="Contact">
-    {{#each @model as |cate|}}
-      {{cate.nom}}
-    {{/each}}
+  {{#each @model as |category|}}
+    <tab.pane @title={{category.nom}}>
 
-    {{#each @model.categories as |cat|}}
-      {{cat.nom}}
-    {{/each}}
+      {{#each @model.contact as |contact|}}
+        <ul>
+          <li>{{contact.nom}}</li>
+          <li>{{contact.prenom}}</li>
+          <li>{{contact.email}}</li>
+        </ul>
+      {{/each}}
 
     </tab.pane>
+  {{/each}}
 
 </BsTab>
 
