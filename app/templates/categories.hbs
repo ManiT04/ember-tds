@@ -1,2 +1,22 @@
 {{page-title "Categories"}}
+
+<BsTab as |tab|>
+
+  <tab.pane @title="Contact">
+    {{#each @model as |cate|}}
+      {{cate.nom}}
+    {{/each}}
+
+    {{#each @model.categories as |cat|}}
+      {{cat.nom}}
+    {{/each}}
+
+    </tab.pane>
+
+</BsTab>
+
 {{outlet}}
+
+<!--
+categories.contact/_id
+-->
