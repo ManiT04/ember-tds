@@ -1,0 +1,23 @@
+{{page-title "Index"}}
+
+<h4 class="ui header dividing">Connection</h4>
+
+  <div class="field required">
+    <label for="input-name">Name:</label>
+    <Input @id="input-name" @value={{model.name}} />
+  </div>
+
+  <div class="field required">
+    <label for="input-email">Email:</label>
+    <Input @id="input-email" @value={{model.email}} />
+  </div>
+
+  <div class="field required">
+    <label for="input-password">Password:</label>
+    <Input @id="input-password" @value={{model.password}} />
+  </div>
+
+  <button class="positive ui button">Se connecter</button>
+
+
+{{outlet}}
