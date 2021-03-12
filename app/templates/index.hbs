@@ -2,22 +2,20 @@
 
 <h4 class="ui header dividing">Connection</h4>
 
-  <div class="field required">
-    <label for="input-name">Name:</label>
-    <Input @id="input-name" @value={{model.name}} />
+<div class="=row">
+  <div class="col">
+    <Input @value={{@model.name}} placeholder="Entrez votre nom" class="form-control"/>
   </div>
-
-  <div class="field required">
-    <label for="input-email">Email:</label>
-    <Input @id="input-email" @value={{model.email}} />
+  <div class="col">
+    <Input @value={{@model.password}} placeholder="Entrez votre mot de passe" class="form-control"/>
   </div>
-
-  <div class="field required">
-    <label for="input-password">Password:</label>
-    <Input @id="input-password" @value={{model.password}} />
+  <div class="col">
+    <Input @value={{@model.email}} placeholder="Entrez votre email" type="email" class="form-control"/>
   </div>
-
-  <button class="positive ui button">Se connecter</button>
-
+  <div class="col">
+    <button {{action "login" @model}} class="btn btn-primary">Se Connecter</button>
+    <!--<LinkTo @route="contacts" class="btn btn-secondary">Annuler</LinkTo>-->
+  </div>
+</div>
 
 {{outlet}}
