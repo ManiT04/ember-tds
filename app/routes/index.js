@@ -1,9 +1,12 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
-import Employee from 'models/employee';
 
 export default class IndexRoute extends Route {
+  model(){
+    return {};
+  }
+
   @service userAuth;
 
   @action
