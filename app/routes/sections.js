@@ -6,7 +6,7 @@ export default class SectionsRoute extends Route {
     return this.store.findAll('section', { include: 'products' });
   }
 
-  @action delete(section) { //détruit définitivement
+  /*@action delete(section) { //détruit définitivement
     section.destroyRecord();
-  }
+  }*/
 }
