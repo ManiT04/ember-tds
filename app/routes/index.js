@@ -7,18 +7,21 @@ export default class IndexRoute extends Route {
     return {};
   }
 
-  @service userAuth;
-
-  @action
-  login(model) {
-    this.store.query("employee", { fliter: { email:model.email }}).then((data)=> {
-      if(data.length){
-        let user = data.firstObject;
-        if(user.password === model.password) {
-          this.userAuth.login(user);
-          //this.transitionTo('board');
+  @action login(user) {
+    this.store
+      .query('employee', {
+        filter: {
+          email: user.email
+        },
+      })
+      .then((employees) => {
+        if (employees.length) {
+          let connected = employees.firstObject;
+          if (connected.password && connected.password === user.password) {
+            this.userAuth.login(connected);
+            this.transitionTo('board');
+          }
         }
-      }
-    });
-  }
+      });
+    }
 }
