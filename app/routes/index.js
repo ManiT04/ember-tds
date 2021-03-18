@@ -3,6 +3,8 @@ import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 
 export default class IndexRoute extends Route {
+  @service userAuth;
+
   model(){
     return {};
   }
@@ -23,5 +25,5 @@ export default class IndexRoute extends Route {
           }
         }
       });
-    }
+  }
 }

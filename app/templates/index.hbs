@@ -1,28 +1,24 @@
-{{page-title "Index"}}
-
 <h4 class="ui header dividing">Connection</h4>
+
+<form {{action "login" @model on="submit"}}>
+  <Input type="email" @value={{@model.email}} placeholder="Votre email"/>
+  <Input type="password" @value={{@model.password}} placeholder="Votre mot de passe"/>
+  <button type="submit">Se connecter</button>
+</form>
+
 
 <form {{action "login" @model on="submit"}}>
   <div class="=row">
     <div class="col">
-      <Input @value={{@model.name}} placeholder="Entrez votre nom" class="form-control"/>
+      <Input type="email" @value={{@model.email}} placeholder="Entrez votre email"/>
     </div>
 
     <div class="col">
-      <Input type="email" @value={{@model.email}} placeholder="Entrez votre email" type="email" class="form-control"/>
+      <Input type="password" @value={{@model.password}} placeholder="Entrez votre mot de passe"/>
     </div>
 
     <div class="col">
-      <Input @value={{@model.password}} placeholder="Entrez votre mot de passe" class="form-control"/>
-    </div>
-
-    <div class="col">
-      <button type="submit" {{action "login" @model}} class="btn btn-primary">Se Connecter</button>
-      <!--<LinkTo @route="contacts" class="btn btn-secondary">Annuler</LinkTo>-->
+      <button type="submit" class="btn btn-primary">Se Connecter</button>
     </div>
   </div>
 </form>
-
-
-
-{{outlet}}
