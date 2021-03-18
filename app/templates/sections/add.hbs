@@ -1,2 +1,22 @@
 {{page-title "Add"}}
+
+<div class="container-md">
+  <div class="=row">
+    <div class="col">
+      <Input @value={{@model.name}} placeholder="Entrez le nom de la section" class="form-control"/>
+    </div>
+    <div class="col">
+      <Input @value={{@model.description}} placeholder="Entrez le descriptif de la section" class="form-control"/>
+    </div>
+    <div class="col">
+      <Input @value={{@model.products}} placeholder="Entrez les produits" class="form-control"/>
+    </div><br>
+    <div class="col">
+      <button {{action "save" @model}} class="btn btn-primary">Enregistrer</button>
+      <LinkTo @route="sections" class="btn btn-secondary">Annuler</LinkTo>
+    </div>
+  </div>
+</div>
+
+
 {{outlet}}
