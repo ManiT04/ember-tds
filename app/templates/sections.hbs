@@ -1,2 +1,29 @@
 {{page-title "Sections"}}
+
+<div class="card">
+  <div class="card-header">
+    Gestion du store
+  </div>
+
+  <div class="card-body">
+    <LinkTo class="btn btn-success" @route="sections.add">Ajouter une section</LinkTo>
+    <LinkTo class="btn btn-success" @route="sections.addProduct">Ajouter un produit</LinkTo>
+  </div>
+
+  <table>
+    {{#each @model as |section|}}
+    <tr>
+      <td> {{section.name}} </td>
+      <td> {{section.products.length}} </td>
+      <td>
+        <LinkTo class="btn btn-secondary btn-sm" @route="sections.edit" @model={{section.id}}></LinkTo>
+        <button class="btn btn-secondary btn-sm" {{action "delete" section }}></button>
+      </td>
+    </tr>
+  {{/each}}
+  </table>
+
+</div>
+
+<LinkTo class="btn btn-green" @route="board">Board</LinkTo>
 {{outlet}}

@@ -1,24 +1,19 @@
 <h4 class="ui header dividing">Connection</h4>
 
-<form {{action "login" @model on="submit"}}>
-  <Input type="email" @value={{@model.email}} placeholder="Votre email"/>
-  <Input type="password" @value={{@model.password}} placeholder="Votre mot de passe"/>
-  <button type="submit">Se connecter</button>
-</form>
-
-
-<form {{action "login" @model on="submit"}}>
-  <div class="=row">
-    <div class="col">
-      <Input type="email" @value={{@model.email}} placeholder="Entrez votre email"/>
-    </div>
-
-    <div class="col">
-      <Input type="password" @value={{@model.password}} placeholder="Entrez votre mot de passe"/>
-    </div>
-
-    <div class="col">
-      <button type="submit" class="btn btn-primary">Se Connecter</button>
+<form class="ui form" {{action "login" @model on="submit"}}>
+  <div class="field">
+    <label>Email</label>
+    <Input type="email" @value={{@model.email}} placeholder="Votre email"/>
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <Input type="password" @value={{@model.password}} placeholder="Votre mot de passe"/>
+  </div>
+  <div class="field">
+    <div class="ui checkbox">
+      <input type="checkbox" tabindex="0" class="hidden">
+      <label>Se souvenir de moi</label>
     </div>
   </div>
+  <button class="ui button" type="submit">Se connecter</button>
 </form>
