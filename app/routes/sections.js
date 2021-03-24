@@ -6,7 +6,18 @@ export default class SectionsRoute extends Route {
     return this.store.findAll('section', { include: 'products' });
   }
 
-  /*@action delete(section) { //détruit définitivement
-    section.destroyRecord();
-  }*/
+  @action delete(section) { //détruit définitivement
+    if(section.products.length == 0) {
+      //section.destroyRecord();
+      this.transitionTo('sections');
+    }
+    else {
+
+    }
+
+ }
 }
+
+
+
+

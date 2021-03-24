@@ -1,5 +1,7 @@
 'use strict';
 
+app.import('node_modules/moment/locale/fr.js'); //Pour affichage des dates au format français
+
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {

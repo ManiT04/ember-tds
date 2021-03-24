@@ -1,2 +1,33 @@
 {{page-title "Edit"}}
+
+<div class="twelve wide stretched column">
+  <div class="ui segment">
+    <div  class="ui one column grid">
+      <div class="column">
+
+        <div class="ui attached segment"><i class="tags icon"></i>
+          Gestion de section : {{@model.products.section}}
+          <LinkTo class="ui right floated teal button" @route="board">Board</LinkTo>
+          <LinkTo class="ui right floated teal button" @route="sections">Retour aux sections</LinkTo>
+        </div>
+
+        <div class="ui attached green segment">
+          <LinkTo class="btn btn-success" @route="sections.addProduct">Ajouter un produit</LinkTo>
+        </div>
+
+        <div class="ui attached green segment">
+          {{#each @model.products as |products|}}
+          <div class="ui two item menu">
+            <a class="item"> {{products.name}} </a>
+            <a class="item"> {{products.price}} € </a>
+          </div>
+          {{/each}}
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
 {{outlet}}

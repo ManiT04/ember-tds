@@ -1,16 +1,27 @@
 <div class="ui green segment">
   <span class="ui label">{{@model.employee.email}}</span>
-  <button class="ui black button" {{action "logout"}}>
+  <button class="ui black button" {{ action "logout" }}>
     Logout
   </button>
 </div>
-<h2>Orders</h2>
-<ul>
-  {{#each @model.orders as |order|}}
-    <li>
-      <LinkTo @route="order" @model={{order.id}}>
-        {{order.dateCreation}} <span class="ui circular label">{{order.orderdetails.length}}</span>
-      </LinkTo>
-    </li>
-  {{/each}}
-</ul>
+
+<div class="twelve wide stretched column">
+  <div class="ui segment">
+    <div  class="ui one column grid">
+      <div class="column">
+        <div class="ui attached segment"><i class="tags icon"></i>Orders
+          <LinkTo class="ui right floated teal button" @route="sections">Parcourir les sections</LinkTo>
+        </div>
+          <ul>
+            {{#each @model.orders as |order|}}
+              <li>
+                <LinkTo @route="order" @model={{order.id}}>
+                  {{order.dateCreation}} <span class="ui circular label">{{order.orderdetails.length}}</span>
+                </LinkTo>
+              </li>
+            {{/each}}
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

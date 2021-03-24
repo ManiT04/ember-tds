@@ -2,7 +2,7 @@
 
 <h4 class="ui header dividing">Connection</h4>
 
-<form class="ui form" {{action "login" @model on="submit"}}>
+<form class="ui form" {{ action "login" @model on="submit" }}>
   <div class="field">
     <label>Email</label>
     <Input type="email" @value={{@model.email}} placeholder="Votre email"/>

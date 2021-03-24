@@ -47,5 +47,7 @@ module.exports = function (environment) {
     // here you can enable a production-specific feature
   }
 
+  ENV.moment = { includeLocales: ['en', 'fr'] }; //pour les dates
+
   return ENV;
 };
