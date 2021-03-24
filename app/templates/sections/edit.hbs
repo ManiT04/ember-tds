@@ -16,12 +16,18 @@
         </div>
 
         <div class="ui attached green segment">
-          {{#each @model.products as |products|}}
-          <div class="ui two item menu">
-            <a class="item"> {{products.name}} </a>
-            <a class="item"> {{products.price}} € </a>
+          <div class="ui grid">
+            {{#each @model.products as |products|}}
+              <div class="three column row">
+                <div class="column">{{products.name}}</div>
+                <div class="column">{{products.price}}</div>
+                <div class="column">
+                  <LinkTo class="btn btn-primary btn-sm" @route="sections"><i class="far fa-edit"></i></LinkTo>
+                  <button class="btn btn-secondary btn-sm" {{ action "delete" products }}><i class="far fa-trash-alt"></i></button>
+                </div>
+              </div>
+            {{/each}}
           </div>
-          {{/each}}
         </div>
 
 

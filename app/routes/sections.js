@@ -14,7 +14,6 @@ export default class SectionsRoute extends Route {
     else {
 
     }
-
  }
 }
 
