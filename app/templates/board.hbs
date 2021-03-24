@@ -9,7 +9,7 @@
   <div class="ui segment">
     <div  class="ui one column grid">
       <div class="column">
-        <div class="ui attached segment"><i class="tags icon"></i>Orders
+        <div class="ui attached segment"><i class="tags icon"></i>Commandes
           <LinkTo class="ui right floated teal button" @route="sections">Parcourir les sections</LinkTo>
         </div>
           <ul>
@@ -22,6 +22,15 @@
             {{/each}}
           </ul>
       </div>
+
+      <LinkTo class="ui right floated teal button" @route="sections">Détails des commandes</LinkTo>
+
+        {{#each @model.orders as |order|}}
+          <div class="ui attached teal segment">
+            <div class="column">{{order.orderdetails}}</div>
+          </div>
+        {{/each}}
+
     </div>
   </div>
 </div>
