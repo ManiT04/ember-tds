@@ -16,21 +16,6 @@
         </div>
 
         <div class="ui attached green segment">
-          <div class="ui grid">
-            {{#each @model.products as |products|}}
-              <div class="three column row">
-                <div class="column">{{products.name}}</div>
-                <div class="column">{{products.price}}</div>
-                <div class="column">
-                  <LinkTo class="btn btn-primary btn-sm" @route="sections"><i class="far fa-edit"></i></LinkTo>
-                  <button class="btn btn-secondary btn-sm" {{ action "delete" products }}><i class="far fa-trash-alt"></i></button>
-                </div>
-              </div>
-            {{/each}}
-          </div>
-        </div>
-
-        <div class="ui attached green segment">
           <table class="ui striped table">
             <tbody>
             {{#each @model.products as |products|}}
