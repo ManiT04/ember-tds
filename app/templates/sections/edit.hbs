@@ -30,6 +30,22 @@
           </div>
         </div>
 
+        <div class="ui attached green segment">
+          <table class="ui striped table">
+            <tbody>
+            {{#each @model.products as |products|}}
+              <tr>
+                <td>{{products.name}}</td>
+                <td>{{products.price}}</td>
+                <td>
+                  <LinkTo class="btn btn-primary btn-sm" @route="sections" ><i class="far fa-edit"></i></LinkTo>
+                  <button class="btn btn-secondary btn-sm" {{ action "delete" products }}><i class="far fa-trash-alt"></i></button>
+                </td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        </div>
 
       </div>
     </div>

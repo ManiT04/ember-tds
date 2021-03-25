@@ -14,14 +14,27 @@
           <Input @value={{@model.price}} placeholder="Entrez le prix du produit" class="form-control"/>
         </div>
 
-        <div class="ui attached teal segment">
+        <!--<div class="ui attached teal segment">
           <Input @value={{@model.section}} placeholder="Entrez la section du produit" class="form-control"/>
-        </div>
+        </div>-->
 
-        <div class="ui attached teal segment">
+        <UiDropdown class="selection" @selected={{@model.section}} @onChange={{fn (mut @model.section)}} as |execute mapper|>
+          <div class="default text">Packs</div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            {{#each @model.sections as |section|}}
+              <div data-value="{{map-value mapper section}}" class="item">
+                {{section.name}}
+              </div>
+            {{/each}}
+          </div>
+        </UiDropdown>
+
+
+        <!--<div class="ui attached teal segment">
           <Input @value={{@model.packs}} placeholder="Entrez le packs du produit" class="form-control"/>
-        </div>
-      <br>
+        </div>-->
+        <br>
 
         <div class="ui attached teal segment">
           <button {{action "save" @model}} class="ui teal button">Enregistrer</button>

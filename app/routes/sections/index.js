@@ -1,22 +1,18 @@
 import Route from '@ember/routing/route';
 import { action } from '@ember/object';
 
-export default class SectionsRoute extends Route {
+export default class SectionsIndexRoute extends Route {
   model() {
     return this.store.findAll('section', { include: 'products' });
   }
 
   @action delete(section) { //détruit définitivement
     if(section.products.length == 0) {
-      //section.destroyRecord();
+      section.destroyRecord();
       this.transitionTo('sections');
     }
     else {
 
     }
- }
+  }
 }
-
-
-
-

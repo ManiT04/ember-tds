@@ -8,15 +8,4 @@ export default class OrderModel extends Model {
     return this.orderdetails.length;
   }
 
-  //@attr('int') id;
-  /*@attr('timestamp') dateCreation;
-  @attr('int') idUser;
-  @attr('int') idEmployee;
-  @attr('enum') status;
-  @attr('float') amount;
-  @attr('float') toPay;
-  @attr('int') itemsNumber;
-  @attr('int') missingNumber;
-  @attr('int') idTimeslots;*/
-
 }
