@@ -8,6 +8,8 @@ export default class SectionsEditRoute extends Route {
   }
 
   @action delete(product) { //détruit définitivement
-    //product.destroyRecord();
+    product.destroyRecord();
+    this.transitionTo('sections.index');
   }
+
 }

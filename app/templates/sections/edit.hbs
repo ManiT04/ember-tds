@@ -12,7 +12,7 @@
         </div>
 
         <div class="ui attached green segment">
-          <LinkTo class="btn btn-success" @route="sections.index.edit.addProduct">Ajouter un produit</LinkTo>
+          <LinkTo class="btn btn-success" @route="sections.index.edit.addProduct" @model={{section.id}}>Ajouter un produit</LinkTo>
         </div>
 
         <div class="ui attached green segment">
@@ -23,7 +23,7 @@
                 <td>{{products.name}}</td>
                 <td>{{products.price}}</td>
                 <td>
-                  <LinkTo class="btn btn-primary btn-sm" @route="sections.index" ><i class="far fa-edit"></i></LinkTo>
+                  <LinkTo class="btn btn-primary btn-sm" @route="sections.index.edit.edit" @model={{section.id}}><i class="far fa-edit"></i></LinkTo>
                   <button class="btn btn-secondary btn-sm" {{ action "delete" products }}><i class="far fa-trash-alt"></i></button>
                 </td>
               </tr>
