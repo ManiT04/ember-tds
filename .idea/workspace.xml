@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d36fe37-6767-4f97-bb34-15894b64292c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/routes/sections/edit/edit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/sections/edit/edit.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/sections/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/sections/edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/sections/index/edit/add-product.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/sections/edit/add-product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/sections/index/edit/delete.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/sections/edit/delete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/sections/index/edit/edit.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/sections/edit.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/sections/edit.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/sections/index/edit/add-product.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/sections/edit/add-product.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/sections/index/edit/delete.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/sections/edit/delete.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/sections/index/edit/edit.hbs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +52,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="M:\prog_web\client_riche\ember-tds\tds\app\routes\sections" />
+      <recent name="M:\prog_web\client_riche\ember-tds\tds\app\templates\sections" />
       <recent name="M:\prog_web\client_riche\ember-tds\tds\app\styles" />
     </key>
   </component>
@@ -60,7 +70,8 @@
       <workItem from="1616069055407" duration="19165000" />
       <workItem from="1616607987623" duration="16465000" />
       <workItem from="1616673766691" duration="11456000" />
-      <workItem from="1617369548764" duration="13112000" />
+      <workItem from="1617369548764" duration="13510000" />
+      <workItem from="1617448677580" duration="8904000" />
     </task>
     <servers />
   </component>

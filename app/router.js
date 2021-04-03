@@ -14,13 +14,17 @@ Router.map(function () {
       this.route('add');
       this.route('addProduct');
 
-      this.route('edit', function() {
+      /*this.route('edit', {path: 'edit/:section_id'}, function() {
         this.route('delete', {path: '/:section_id/delete/:product_id'});
         this.route('edit', {path: '/:section_id/edit/:product_id'});
         this.route('addProduct', {path: '/:section_id/addProduct'});
-      });
+      });*/
     });
-    this.route('edit', {path: 'edit/:section_id'});
+    this.route('edit', {path: 'edit/:section_id'}, function() {
+      this.route('delete', {path: '/delete/:product_id'});
+      this.route('edit', {path: '/edit/:product_id'});
+      this.route('addProduct', {path: '/addProduct'});
+    });
     this.route('delete', {path: 'delete/:section_id'});
   });
 

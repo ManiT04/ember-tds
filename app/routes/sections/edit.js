@@ -3,13 +3,19 @@ import { action } from '@ember/object';
 
 export default class SectionsEditRoute extends Route {
 
-  model(params) { //automatiquement fait par ember car déjà préciser dans router en convention de nommage
-    return this.store.find('section', params.section_id) //permet de savoir quel objet charger
+  model(params) {
+    return this.store.findRecord('section', params.section_id, {include : 'products'})
   }
 
-  @action delete(product) { //détruit définitivement
+  @action delete(product, section) { //détruit définitivement
     product.destroyRecord();
-    this.transitionTo('sections.index');
+    this.transitionTo('sections.edit',section.id);
   }
+
+  @action edit(id_section, id_product) {
+    this.transitionTo('sections.edit.edit',id_section,id_product);
+  }
+
+
 
 }
