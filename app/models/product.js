@@ -4,5 +4,5 @@ export default class ProductModel extends Model {
   @attr('string') name;
   @attr('string') price;
   @belongsTo('section') section;
-  @hasMany('product', { inverse: null }) packs;
+  @hasMany('product', { inverse: null, defaultValue: [] }) packs;
 }
