@@ -4,9 +4,58 @@
 
 {{#each @model.orders as |order|}}
   <div class="ui attached teal segment">
-    <div class="column">{{order.orderdetails}}</div>
+    <div class="column">
+      {{#each order.orderdetail as |details|}}
+        <div>
+          {{details.quantity}}
+        </div>
+        <div>
+          {{details.product}}
+        </div>
+        <div>
+          {{details.order}}
+        </div>
+      {{/each}}
+    </div>
   </div>
 {{/each}}
 
 
+<div class="twelve wide stretched column">
+  <div class="ui segment">
+    <div  class="ui one column grid">
+      <div class="column">
+        <div class="ui attached segment"><i class="tags icon"></i>
+          Mes commandes
+          <LinkTo class="ui right floated teal button" @route="board">Board</LinkTo>
+        </div>
+
+        <div class="ui attached green segment">
+          <table class="ui striped table">
+
+            <thead>
+            <tr>
+              <th>Date de Création</th>
+              <th>Quantité</th>
+              <th>Montant</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each @model.orders as |order|}}
+              <tr>
+                <td>{{order.dateCreation}}</td>
+                <td>{{order.count}}</td>
+                <!--<td>{{order.amount}}</td>-->
+
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 {{outlet}}

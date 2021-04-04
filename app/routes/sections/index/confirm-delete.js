@@ -8,7 +8,6 @@ export default class SectionsIndexConfirmDeleteRoute extends Route {
     return this.store.findRecord('section', params.section_id, {include : 'products'})
   }
 
-
   //méthode asynchrone de suppression des produits de la section,
   //dans laquelle la suppression des produits est bloquante.
   //Cette méthode retournera une promise, dans laquelle il sera possible de supprimer la section.
@@ -25,9 +24,5 @@ export default class SectionsIndexConfirmDeleteRoute extends Route {
     this.transitionTo('sections.index');
   }
 
-  /*renderTemplate() {
-    let product = this.modelFor(this.routeName);
-    this.render({ outlet: product.id});
-  }*/
 
 }

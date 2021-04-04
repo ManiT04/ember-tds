@@ -7,5 +7,5 @@ export default class OrderModel extends Model {
   get count() {
     return this.orderdetails.length;
   }
-
+  //@attr('float') amount;
 }
