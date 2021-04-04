@@ -13,6 +13,7 @@ Router.map(function () {
     this.route('index', function() {
       this.route('add');
       this.route('addProduct');
+      this.route('confirmDelete', {path: 'confirmDelete/:section_id'});
     });
 
     this.route('edit', {path: 'edit/:section_id'}, function() {

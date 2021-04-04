@@ -1,2 +1,12 @@
 {{page-title "MyOrders"}}
+
+<LinkTo class="ui right floated teal button" @route="sections">Détails des commandes</LinkTo>
+
+{{#each @model.orders as |order|}}
+  <div class="ui attached teal segment">
+    <div class="column">{{order.orderdetails}}</div>
+  </div>
+{{/each}}
+
+
 {{outlet}}

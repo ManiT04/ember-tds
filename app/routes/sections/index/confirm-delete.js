@@ -1,15 +1,18 @@
 import Route from '@ember/routing/route';
 import { action } from '@ember/object';
+import RSVP from 'rsvp';
 
-export default class SectionsIndexRoute extends Route {
-  model() {
-    return this.store.findAll('section', { include: 'products' });
+export default class SectionsIndexConfirmDeleteRoute extends Route {
+
+  model(params) {
+    return this.store.findRecord('section', params.section_id, {include : 'products'})
   }
+
 
   //méthode asynchrone de suppression des produits de la section,
   //dans laquelle la suppression des produits est bloquante.
   //Cette méthode retournera une promise, dans laquelle il sera possible de supprimer la section.
- /* async deleteProducts(products) {
+  async deleteProducts(products) {
     while (products.firstObject) {
       let p = products.firstObject;
       await p.destroyRecord();
@@ -19,15 +22,12 @@ export default class SectionsIndexRoute extends Route {
     this.deleteProducts(section.products).then(() => {
       section.destroyRecord();
     });
+    this.transitionTo('sections.index');
+  }
+
+  /*renderTemplate() {
+    let product = this.modelFor(this.routeName);
+    this.render({ outlet: product.id});
   }*/
 
-  /*@action delete(section) { //détruit définitivement
-    if(section.products.length == 0) {
-      section.destroyRecord();
-      this.transitionTo('sections');
-    }
-    else {
-
-    }
-  }*/
 }
