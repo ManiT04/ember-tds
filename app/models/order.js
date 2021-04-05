@@ -1,4 +1,4 @@
-import Model, { attr, hasMany } from '@ember-data/model';
+import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
 
 export default class OrderModel extends Model {
 
@@ -9,4 +9,5 @@ export default class OrderModel extends Model {
     return this.orderdetails.length;
   }
   @attr('number') amount;
+  @belongsTo('user') user;
 }
