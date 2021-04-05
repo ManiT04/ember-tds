@@ -1,26 +1,5 @@
 {{page-title "MyOrders"}}
 
-<LinkTo class="ui right floated teal button" @route="sections">Détails des commandes</LinkTo>
-
-{{#each @model.orders as |order|}}
-  <div class="ui attached teal segment">
-    <div class="column">
-      {{#each order.orderdetail as |details|}}
-        <div>
-          {{details.quantity}}
-        </div>
-        <div>
-          {{details.product}}
-        </div>
-        <div>
-          {{details.order}}
-        </div>
-      {{/each}}
-    </div>
-  </div>
-{{/each}}
-
-
 <div class="twelve wide stretched column">
   <div class="ui segment">
     <div  class="ui one column grid">
@@ -32,30 +11,45 @@
 
         <div class="ui attached green segment">
           <table class="ui striped table">
-
             <thead>
-            <tr>
-              <th>Date de Création</th>
-              <th>Quantité</th>
-              <th>Montant</th>
-            </tr>
+              <tr>
+                <th>Section</th>
+                <th>Date de Création</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+              </tr>
             </thead>
 
             <tbody>
-            {{#each @model.orders as |order|}}
-              <tr>
-                <td>{{order.dateCreation}}</td>
-                <td>{{order.count}}</td>
-                <!--<td>{{order.amount}}</td>-->
-
-              </tr>
-            {{/each}}
+              {{#each @model.orderdetails as |order|}}
+                <tr>
+                  <td>{{ order.product.section.name }}</td>
+                  <td>{{@model.dateCreation}}</td>
+                  <td>{{ order.product.name }}</td>
+                  <td>{{ order.product.price }}</td>
+                  <td>{{ order.quantity }}</td>
+                </tr>
+              {{/each}}
             </tbody>
           </table>
+        </div>
+
+        <div class="ui attached green segment">
+          <LinkTo class="btn btn-primary btn-sm" @route="myOrders.prepare" @models={{ array @model.id @model.id}}>Préparation de commande</LinkTo>
         </div>
 
       </div>
     </div>
   </div>
 </div>
+
+
+<!--<tr>
+<td>{{@model.dateCreation}}</td>
+<td>{{@model.count}}</td>
+<td>{{@model.amount}}</td>
+</tr>-->
+
+
 {{outlet}}

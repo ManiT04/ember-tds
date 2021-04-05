@@ -29,7 +29,7 @@ Router.map(function () {
     this.route('add');
   });
 
-  this.route('myOrders', function() {
+  this.route('myOrders', {path: 'myOrders/:order_id'}, function() {
     this.route('prepare', {path: 'prepare/:order_id'}, function() {
       this.route('cancel');
       this.route('prepared');

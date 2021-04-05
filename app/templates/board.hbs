@@ -2,29 +2,27 @@
   <div class="ui segment">
     <div  class="ui one column grid">
       <div class="column">
-        <div class="ui attached segment"><i class="tags icon"></i>Commandes
+        <div class="ui attached segment"><i class="shopping basket icon"></i>Commandes
           <LinkTo class="ui right floated teal button" @route="sections">Parcourir les sections</LinkTo>
         </div>
-          <ul>
+
+        <div class="ui attached green segment">
+          <table class="ui striped table">
+            <tbody>
             {{#each @model.orders as |order|}}
-              <li>
-                <LinkTo @route="order" @model={{order.id}}>
-                  {{order.dateCreation}} <span class="ui circular label">{{order.orderdetails.length}}</span>
-                </LinkTo>
-              </li>
+              <tr>
+                <td>
+                  <LinkTo @route="myOrders" @model={{order.id}}>
+                    {{order.dateCreation}} <span class="ui circular label">{{order.orderdetails.length}}</span>
+                  </LinkTo>
+                </td>
+              </tr>
             {{/each}}
-          </ul>
+            </tbody>
+          </table>
+        </div>
+
       </div>
-
-      <!--<LinkTo class="ui right floated teal button" @route="sections">Détails des commandes</LinkTo>
-
-        {{#each @model.orders as |order|}}
-          <div class="ui attached teal segment">
-            <div class="column">{{order.orderdetails}}</div>
-          </div>
-        {{/each}}
-        -->
-
     </div>
   </div>
 </div>
