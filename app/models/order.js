@@ -10,4 +10,5 @@ export default class OrderModel extends Model {
   }
   @attr('number') amount;
   @belongsTo('user') user;
+  @attr('string') status;
 }

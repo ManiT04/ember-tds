@@ -5,8 +5,8 @@
     <div  class="ui one column grid">
       <div class="column">
         <div class="ui attached segment"><i class="shopping basket icon"></i>
-          Mes commandes
-          <LinkTo class="ui right floated teal button" @route="board">Board</LinkTo>
+          Commandes
+          <LinkTo class="ui right floated teal button" @route="board">Aller au tableau de bord</LinkTo>
         </div>
 
         <div class="ui attached green segment">
@@ -18,6 +18,7 @@
                 <th>Nom</th>
                 <th>Prix</th>
                 <th>Quantité</th>
+                <th>Statut</th>
               </tr>
             </thead>
 
@@ -29,6 +30,7 @@
                   <td>{{ order.product.name }}</td>
                   <td>{{ order.product.price }}</td>
                   <td>{{ order.quantity }}</td>
+                  <td>{{ @model.status }}</td>
                 </tr>
               {{/each}}
             </tbody>
@@ -36,7 +38,7 @@
         </div>
 
         <div class="ui attached green segment">
-          <LinkTo class="btn btn-primary btn-sm" @route="myOrders.prepare" @models={{ array @model.id @model.id}}>Préparation de commande</LinkTo>
+          <LinkTo class="ui floated teal button" @route="myOrders.prepare" @models={{ array @model.id @model.id}}>Préparation de commande</LinkTo>
         </div>
 
       </div>

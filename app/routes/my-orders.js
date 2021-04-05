@@ -11,19 +11,6 @@ export default class MyOrdersRoute extends abstractroute {
     this.moment.updateLocale('fr');
   }
 
-  /*model() {
-    let user = this.userAuth.user;
-    if (user) {
-      return RSVP.hash({
-        orders: this.store.query('order', {
-          filter: { idEmployee: user.id },
-          include: 'orderdetails',
-        }),
-        employee: user,
-      });
-    }
-  }*/
-
   model(params) {
     return this.store.findRecord('order', params.order_id, {include : 'orderdetails.product'});
   }
