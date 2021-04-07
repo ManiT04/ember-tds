@@ -9,6 +9,9 @@ export default class MyOrdersPrepareRoute extends Route {
   }
 
   @action prepare(order) {
+    order.orderdetails.foreach(order.orderdetails.product);{
+      order.orderdetails.preprared = true;
+    }
     order.status = "created";
     this.transitionTo('myOrders',order.id);
     console.log("created");

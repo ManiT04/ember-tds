@@ -34,5 +34,6 @@ Router.map(function () {
       this.route('cancel');
       this.route('prepared');
     });
+    this.route('confirmPrepared');
   });
 });

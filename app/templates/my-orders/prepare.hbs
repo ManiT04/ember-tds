@@ -52,8 +52,8 @@
 
           <div class="ui attached teal segment">
             <LinkTo class="ui teal basic button" @route="myOrders" @model={{ @model.id }}>Annuler la commande</LinkTo>
-            <LinkTo class="ui right floated teal basic button" @route="myOrders" @model={{ @model.id }}>Commande préparé</LinkTo> <br>
-            <button class="ui right floated green button" {{ action "prepare" @model}}>Commande préparé</button>
+            <!--<LinkTo class="ui right floated teal basic button" @route="myOrders" @model={{ @model.id }}>Commande préparé</LinkTo> <br>-->
+            <button class="ui right floated teal button" {{ action "prepare" @model}}>Commande préparé</button>
           </div>
 
         </div>
