@@ -44,20 +44,16 @@
 
         <div class="ui attached teal segment">
 
-          <div class="ui active progress">
-            <div class="bar">
-              <div class="progress"></div>
-            </div><br>
-            
+          <div class="ui indicating progress">
+            <div class="bar"></div>
           </div>
+          <div class="label" style="text-align: center">Produits préparés</div>
 
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-          </div>
 
-          <div class="ui attached green segment">
-            <button class="ui floated teal button">Annuler la commande</button>
-            <button class="ui right floated teal button">Commande préparé</button>
+          <div class="ui attached teal segment">
+            <LinkTo class="ui teal basic button" @route="myOrders" @model={{ @model.id }}>Annuler la commande</LinkTo>
+            <LinkTo class="ui right floated teal basic button" @route="myOrders" @model={{ @model.id }}>Commande préparé</LinkTo> <br>
+            <button class="ui right floated green button" {{ action "prepare" @model}}>Commande préparé</button>
           </div>
 
         </div>
