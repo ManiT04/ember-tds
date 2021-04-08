@@ -9,7 +9,7 @@ export default class MyOrdersPrepareRoute extends Route {
   }
 
   @action prepare(order) {
-    order.orderdetails.foreach((od)=>{
+    order.get('orderdetails').forEach((od)=>{
       od.set('preprared',true);
     });
     order.status = "created";
