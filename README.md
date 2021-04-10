@@ -27,8 +27,7 @@ Vous aurez besoin des éléments suivants correctement installés sur votre ordi
 * `ember serve` dans votre dossier, exemple : M:\prog_web\client_riche\ember-tds\tds
 * `ubiquity serve -p=8091` dans votre dossier où se trouve l'API Rest préalablement installée, exemple : M:\prog_web\client_riche\projet_store\store-api
 * Démarrer Apache à partir du xampp-control
-  * En cas de problème, aller dans le dossier C:\xampp\mysql\data et supprimer un fichier de type aria_log.000000XX
-  
+ 
 * Visitez votre application à cette adresse : [http://localhost:4200](http://localhost:4200).
 * Visitez vos tests à cette adresse : [http://localhost:4200/tests](http://localhost:4200/tests).
 
@@ -49,6 +48,25 @@ Voir le mpd : https://slamwiki2.kobject.net/frontoffice/emberjs/td6#paniers
 
 Le fichier router.js répertorie toutes les routes du projet, et permet également d'ajouter des paramètres aux routes crées.
 
+
+* Pour intégrer le framework Sementic-ui-ember et le jquery, nous avons lancer ces commandes dans notre terminal :
+* `ember install semantic-ui-ember`
+* `ember install @ember/jquery`
+* `ember install @ember/optional-features`
+* `ember feature:enable jquery-integration`
+
+* Pour le système d'authentification, on crée un service `ember g service user-auth`. 
+* Pour ce connecter à notre API Rest externe, on crée un adaptateur et un serializer `ember g adapter application` `ember g serializer application`.
+* On crée également des serializres pour la gestion des objets associés et des tables associations, car par exemple pour les sections, une liste de produit est associée à la réponse, ou quand il y a une association composite entre les identifiants ou les tables.
+* Pour le listage des commandes à préparer, on utilise le module RSVP qui va permettre de retourner un ensemble d'objets dans une seule promise.
+
+* J'ai également utilisé des outlets nommés, pour la partie du menu contenant toute les sections.
+
+### En ces d'erreur ...
+
+* Pour le lancement d'Apache : aller dans le dossier C:\xampp\mysql\data et supprimer un fichier de type aria_log.000000XX
+* Mettre à jour l'API Rest pour éviter tout problème : `composer require phpmv/ubiquity:dev-master`
+  
 ### Lancer les Tests
 
 * `ember test`
