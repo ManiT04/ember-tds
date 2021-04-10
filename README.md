@@ -45,7 +45,10 @@ Vous aurez besoin des éléments suivants correctement installés sur votre ordi
 
 ### Deploiement du projet 
 
-Specify what it takes to deploy your app.
+*`ember serve` dans votre dossier, exemple : M:\prog_web\client_riche\ember-tds\tds
+*`ubiquity serve -p=8091` dans votre dossier où se trouve l'API Rest préalablement installée, exemple : M:\prog_web\client_riche\projet_store\store-api
+* Démarrer Apache à partir du xampp-control
+En cas de problème, aller dans le dossier C:\xampp\mysql\data et supprimer un fichier de type aria_log.000000XX
 
 ## Liens utiles
 
