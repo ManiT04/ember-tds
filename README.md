@@ -56,7 +56,7 @@ Le fichier router.js répertorie toutes les routes du projet, et permet égaleme
 * `ember feature:enable jquery-integration`
 
 * Pour le système d'authentification, on crée un service `ember g service user-auth`. 
-* Pour ce connecter à notre API Rest externe, on crée un adaptateur et un serializer `ember g adapter application` `ember g serializer application`.
+* Pour se connecter à notre API Rest externe, on crée un adaptateur et un serializer `ember g adapter application` `ember g serializer application`.
 * On crée également des serializres pour la gestion des objets associés et des tables associations, car par exemple pour les sections, une liste de produit est associée à la réponse, ou quand il y a une association composite entre les identifiants ou les tables.
 * Pour le listage des commandes à préparer, on utilise le module RSVP qui va permettre de retourner un ensemble d'objets dans une seule promise.
 
