@@ -3,7 +3,8 @@
 Ce projet consiste à faire une application web permettant aux commerçants de gérer leur magasin et la préparation des commandes des clients, notamment pour la vente à emporter.
 Cette application se base sur le framework ember js, qui est un framework open source Javascript. Il s'appuie sur une architecture de type MVC (modèle-vue-contrôleur).
 Il permet aux développeurs de créer des applications web suivant les bonnes pratiques du framework.
-Pour l'application, vous aurez besoin d'une API Rest notamment pour la base de donnée. 
+Pour l'application, vous aurez besoin d'une API Rest notamment pour la base de données. 
+https://slamwiki2.kobject.net/frontoffice/emberjs
 
 ## Prerequis
 
@@ -23,9 +24,30 @@ Vous aurez besoin des éléments suivants correctement installés sur votre ordi
 
 ## Running / Development
 
-* `ember serve`
+* `ember serve` dans votre dossier, exemple : M:\prog_web\client_riche\ember-tds\tds
+* `ubiquity serve -p=8091` dans votre dossier où se trouve l'API Rest préalablement installée, exemple : M:\prog_web\client_riche\projet_store\store-api
+* Démarrer Apache à partir du xampp-control
+  * En cas de problème, aller dans le dossier C:\xampp\mysql\data et supprimer un fichier de type aria_log.000000XX
+  
 * Visitez votre application à cette adresse : [http://localhost:4200](http://localhost:4200).
 * Visitez vos tests à cette adresse : [http://localhost:4200/tests](http://localhost:4200/tests).
+
+## Principe et fonctionnement
+
+Le framework ember js peut se découper en deux parties distinctes, notamment pour ce projet : les Templates et les Routes.
+Ces deux parties sont "liées" entre elles, toute la partie visuelle va être créer dans le template, et toutes les actions vont être crées dans la route ou le controller associé.
+Quand on crée une route, une template se crée automatiquement. Pour créer une fonction/action sur la route, il faut ajouter `@action` de `import { action } from '@ember/object';`, et dans le template `{{ action "prepare" @model}}`, tout ce qui est séparé d'un espace après l'action représente les paramètres, donc ici @model devient le paramètre de la fonction prepare.
+
+* `ember g route new-route` : pour créer une route ('g' pour generate)
+* `ember g controller new-controller` : pour créer un controller
+* `ember g helper new-helper` : pour créer un helper
+* `ember g serializer new-serializer` : pour créer un serializer
+* `ember g component new-component` : pour créer un component
+* `ember g model new-model` : pour créer un model
+Les models reprennent le modèle physique de données du sujet, avec les différents champs des tables en tenant compte des liaisons entre les données.
+Voir le mpd : https://slamwiki2.kobject.net/frontoffice/emberjs/td6#paniers 
+
+Le fichier router.js répertorie toutes les routes du projet, et permet également d'ajouter des paramètres aux routes crées.
 
 ### Lancer les Tests
 
@@ -38,20 +60,18 @@ Vous aurez besoin des éléments suivants correctement installés sur votre ordi
 * `npm run lint:js`
 * `npm run lint:js -- --fix`
 
-### Building du projet
+### Construction du projet
 
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploiement du projet 
-
-* `ember serve` dans votre dossier, exemple : M:\prog_web\client_riche\ember-tds\tds
-* `ubiquity serve -p=8091` dans votre dossier où se trouve l'API Rest préalablement installée, exemple : M:\prog_web\client_riche\projet_store\store-api
-* Démarrer Apache à partir du xampp-control
-  * En cas de problème, aller dans le dossier C:\xampp\mysql\data et supprimer un fichier de type aria_log.000000XX
-
 ## Liens utiles
-
+  
+* https://slamwiki2.kobject.net/frontoffice/emberjs
+  * https://slamwiki2.kobject.net/frontoffice/emberjs/td6
+  * https://slamwiki2.kobject.net/frontoffice/emberjs/td7
+  * https://slamwiki2.kobject.net/frontoffice/emberjs/td8 
+  
 * [ember.js](https://emberjs.com/)
 * [ember-cli](https://ember-cli.com/)
 * Extensions du navigateur de développement
