@@ -1,16 +1,19 @@
-# tds
+# Projet Ember JS - Module M4103C_2
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Ce projet consiste à faire une application web permettant aux commerçants de gérer leur magasin et la préparation des commandes des clients, notamment pour la vente à emporter.
+Cette application se base sur le framework ember js, qui est un framework open source Javascript. Il s'appuie sur une architecture de type MVC (modèle-vue-contrôleur).
+Il permet aux développeurs de créer des applications web suivant les bonnes pratiques du framework.
+Pour l'application, vous aurez besoin d'une API Rest notamment pour la base de donnée. 
 
-## Prerequisites
+## Prerequis
 
-You will need the following things properly installed on your computer.
+Vous aurez besoin des éléments suivants correctement installés sur votre ordinateur.
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
+* API Rest, voir https://slamwiki2.kobject.net/frontoffice/emberjs/td6-api pour la mise en place de l'api.
 
 ## Installation
 
@@ -21,37 +24,33 @@ You will need the following things properly installed on your computer.
 ## Running / Development
 
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+* Visitez votre application à cette adresse : [http://localhost:4200](http://localhost:4200).
+* Visitez vos tests à cette adresse : [http://localhost:4200/tests](http://localhost:4200/tests).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
+### Lancer les Tests
 
 * `ember test`
 * `ember test --server`
 
-### Linting
+### Pour l'analyse statique du code :
 
 * `npm run lint:hbs`
 * `npm run lint:js`
 * `npm run lint:js -- --fix`
 
-### Building
+### Building du projet
 
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
+### Deploiement du projet 
 
 Specify what it takes to deploy your app.
 
-## Further Reading / Useful Links
+## Liens utiles
 
 * [ember.js](https://emberjs.com/)
 * [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
+* Extensions du navigateur de développement
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
