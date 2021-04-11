@@ -66,6 +66,13 @@ Le fichier router.js répertorie toutes les routes du projet, et permet égaleme
 
 * Pour le lancement d'Apache : aller dans le dossier C:\xampp\mysql\data et supprimer un fichier de type aria_log.000000XX
 * Mettre à jour l'API Rest pour éviter tout problème : `composer require phpmv/ubiquity:dev-master`
+
+### Non implémenté
+
+* Sprint 2 non complet : 
+  * Lien vers myOrders/prepare/:order_id/prepared ⇒ marque la commande comme préparée
+  * Marque un produit comme préparé
+  * Marque tous les produits comme préparés
   
 ### Lancer les Tests
 
